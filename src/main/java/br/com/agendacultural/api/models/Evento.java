@@ -1,6 +1,7 @@
 package br.com.agendacultural.api.models;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Column;
 import lombok.Data;
 import java.util.List;
 
@@ -11,9 +12,9 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
-    @Lob
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
     private String imagemUrl;
 
